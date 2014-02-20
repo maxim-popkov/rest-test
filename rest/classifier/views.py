@@ -1,33 +1,45 @@
-from classifier.models import Classifier, TrainVector
-from classifier.serializers import ClsSerializer, VectorSerializer
+from classifier.models import Classifier, TrainVector, Label
+from classifier.serializers import ClsSerializer, VectorSerializer, LabelSerializer
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+import logging
+
+logger = logging.getLogger(__name__)
 
 class VectorList(APIView):
     """
     List all snippets, or create a new snippet.
     """
     def get(self, request, cls_id, format=None):
-    	try:
-    		cls = Classifier.objects.get(pk=cls_id)
-    	except Classifier.DoesNotExist:
-    		raise Http404
-        vectors = TrainVector.objects.all()
+    	vectors = TrainVector.objects.all()
         serializer = VectorSerializer(vectors, many=True)
         return Response(serializer.data)
 
     def post(self, request, cls_id, format=None):
-        try:
-    		cls = Classifier.objects.get(pk=cls_id)
-    	except Classifier.DoesNotExist:
-    		raise Http404
         serializer = VectorSerializer(data=request.DATA)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class LabelList(APIView):
+    """
+    List all snippets, or create a new snippet.
+    """
+    def get(self, request, cls_id, format=None):
+        lbls = Label.objects.all()
+        serializer = LabelSerializer(lbls, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, cls_id, format=None):
+        serializer = LabelSerializer(data=request.DATA)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class ClsList(APIView):
     """
