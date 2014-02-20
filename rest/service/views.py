@@ -7,8 +7,8 @@ from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from service.models import Document
-from service.serializers import DocSerializer
+from service.models import Document, Text
+from service.serializers import DocSerializer, TxtSerializer
 
 # class JSONResponse(HttpResponse):
 #     """
@@ -38,6 +38,24 @@ def doc_list(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET', 'POST'])
+def txt_list(request, pk):
+    """
+    List all code txts, or create a new txt.
+    """
+    if request.method == 'GET':
+        txts = Text.objects.all()
+        serializer = TxtSerializer(txts, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        data = request.DATA #JSONParser().parse(request)
+        serializer = TxtSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)        
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def doc_detail(request, pk):
