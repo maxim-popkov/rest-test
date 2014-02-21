@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 class ClsSerializer(serializers.ModelSerializer):
 
-	"""Serializer class for Classifier model"""
+    """Serializer class for Classifier model"""
 
     class Meta:
         model = Classifier
@@ -14,7 +14,7 @@ class ClsSerializer(serializers.ModelSerializer):
 
 class VectorSerializer(serializers.ModelSerializer):
 
-	"""Serializer class for Train Vector model"""
+    """Serializer class for Train Vector model"""
 
     class Meta:
         model = TrainVector
@@ -24,7 +24,7 @@ class VectorSerializer(serializers.ModelSerializer):
 
 class LabelSerializer(serializers.ModelSerializer):
 
-	"""Serializer class for Label model"""
+    """Serializer class for Label model"""
 
     class Meta:
         model = Label
@@ -34,7 +34,7 @@ class LabelSerializer(serializers.ModelSerializer):
 
 class TestVectorSerializer(serializers.ModelSerializer):
 
-	"""Serializer class for Test Vector model"""
+    """Serializer class for Test Vector model"""
 
     class Meta:
         model = TestVector

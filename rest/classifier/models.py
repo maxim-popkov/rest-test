@@ -3,22 +3,22 @@ from django.db import models
 
 class Classifier(models.Model):
 
-	"""
-	DataBase ORM Model for Classifier
-	"""
-
+    """
+    DataBase ORM Model for Classifier
+    """
     title = models.CharField(max_length=64)
     desc = models.TextField()
+    # save_file = models.FileField('cls')
 
     def __unicode__(self):
         return self.title
 
 
 class Label(models.Model):
-	
-	"""
-	DataBase ORM Model for Label
-	"""
+    
+    """
+    DataBase ORM Model for Label
+    """
     
     name = models.CharField(max_length=64)
 
@@ -28,9 +28,9 @@ class Label(models.Model):
 
 class TrainVector(models.Model):
 
-	"""
-	DataBase ORM Model for Train Vector
-	"""
+    """
+    DataBase ORM Model for Train Vector
+    """
     
     cls = models.ForeignKey(Classifier)
     lbl = models.ForeignKey(Label)
@@ -41,10 +41,10 @@ class TrainVector(models.Model):
 
 
 class TestVector(models.Model):
-	
-	"""
-	DataBase ORM Model for Test Vector
-	"""
+    
+    """
+    DataBase ORM Model for Test Vector
+    """
     
     # param blank=True for admin panel,
     # with param can add vector without specifying foreignkeys
