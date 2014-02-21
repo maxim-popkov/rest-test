@@ -8,7 +8,7 @@ class Classifier(models.Model):
     """
     title = models.CharField(max_length=64)
     desc = models.TextField()
-    # save_file = models.FileField('cls')
+    save_file_path = models.FileField(upload_to='cls', blank=True)
 
     def __unicode__(self):
         return self.title
@@ -34,7 +34,7 @@ class TrainVector(models.Model):
     
     cls = models.ForeignKey(Classifier)
     lbl = models.ForeignKey(Label)
-    data = models.CharField(max_length=64)
+    data = models.TextField()
 
     def __unicode__(self):
         return self.data
@@ -51,7 +51,7 @@ class TestVector(models.Model):
     cls = models.ForeignKey(
         Classifier, null=True, blank=True, db_constraint=False)
     lbl = models.ForeignKey(Label, null=True, blank=True, db_constraint=False)
-    data = models.CharField(max_length=64)
+    data = models.TextField()
     isClassified = models.BooleanField(default=False)
 
     def __unicode__(self):
