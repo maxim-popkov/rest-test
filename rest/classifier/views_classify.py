@@ -8,12 +8,15 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class ClassifyList(APIView):
+
     """
     List all snippets, or create a new snippet.
     """
+
     def get(self, request, cls_id, format=None):
-    	vectors = TestVector.objects.all()
+        vectors = TestVector.objects.all()
         serializer = TestVectorSerializer(vectors, many=True)
         return Response(serializer.data)
 

@@ -8,12 +8,15 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class VectorList(APIView):
+
     """
-    List all snippets, or create a new snippet.
+    List all Train Vectors, or create a new Train Vector.
     """
+
     def get(self, request, cls_id, format=None):
-    	vectors = TrainVector.objects.all()
+        vectors = TrainVector.objects.all()
         serializer = VectorSerializer(vectors, many=True)
         return Response(serializer.data)
 
@@ -24,10 +27,13 @@ class VectorList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class LabelList(APIView):
+
     """
-    List all snippets, or create a new snippet.
+    List all Labels, or create a new Label.
     """
+
     def get(self, request, cls_id, format=None):
         lbls = Label.objects.all()
         serializer = LabelSerializer(lbls, many=True)
@@ -42,9 +48,11 @@ class LabelList(APIView):
 
 
 class ClsList(APIView):
+
     """
-    List all snippets, or create a new snippet.
+    List all Classifiers, or create a new Classifier.
     """
+
     def get(self, request, format=None):
         classifiers = Classifier.objects.all()
         serializer = ClsSerializer(classifiers, many=True)
@@ -59,9 +67,11 @@ class ClsList(APIView):
 
 
 class ClsDetail(APIView):
+
     """
-    Retrieve, update or delete a snippet instance.
+    Retrieve, update or delete a Classifier Details.
     """
+
     def get_object(self, cls_id):
         try:
             return Classifier.objects.get(pk=cls_id)
