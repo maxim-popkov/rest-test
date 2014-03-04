@@ -1,0 +1,159 @@
+2014-03-05 02:10:50,522 INFO this is some interesting info!
+2014-03-05 02:11:06,009 INFO this is some interesting info!
+2014-03-05 02:13:08,875 INFO [<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+2014-03-05 02:13:08,875 INFO ['__and__', '__class__', '__deepcopy__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__getitem__', '__getstate__', '__hash__', '__init__', '__iter__', '__len__', '__module__', '__new__', '__nonzero__', '__or__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_as_sql', '_batched_insert', '_clone', '_db', '_earliest_or_latest', '_fetch_all', '_filter_or_exclude', '_for_write', '_known_related_objects', '_merge_known_related_objects', '_merge_sanity_check', '_next_is_sticky', '_prefetch_done', '_prefetch_related_lookups', '_prefetch_related_objects', '_prepare', '_raw_delete', '_result_cache', '_setup_aggregate_query', '_sticky_filter', '_update', 'aggregate', 'all', 'annotate', 'bulk_create', 'complex_filter', 'count', 'create', 'dates', 'datetimes', 'db', 'defer', 'delete', 'distinct', 'earliest', 'exclude', 'exists', 'extra', 'filter', 'first', 'get', 'get_or_create', 'in_bulk', 'iterator', 'last', 'latest', 'model', 'none', 'only', 'order_by', 'ordered', 'prefetch_related', 'query', 'reverse', 'select_for_update', 'select_related', 'update', 'using', 'value_annotation', 'values', 'values_list']
+2014-03-05 02:15:21,667 INFO [<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+2014-03-05 02:15:21,670 INFO <class 'classifier.models.TestVector'>
+2014-03-05 02:16:33,111 WARNING C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+2014-03-05 02:27:01,365 WARNING C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+2014-03-05 02:27:02,114 INFO [<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+2014-03-05 02:27:02,115 INFO <class 'classifier.models.TestVector'>
+2014-03-05 02:27:02,117 INFO {u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}
+2014-03-05 02:27:02,118 INFO {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}
+2014-03-05 02:27:02,118 INFO {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sky', u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sky', u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sky', u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sky', u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sky', u'Sun']
+[u'Sun']
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sun', u'Sun']
+[u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sun', u'Sun']
+[u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sun', u'Sun']
+[u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sun', u'Sun']
+[u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sun', u'Sun']
+[u'Sun']
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sun', u'Sun']
+[u'Sun']
+C:\Users\Dales3D\Anaconda\lib\site-packages\numpy\oldnumeric\__init__.py:11: ModuleDeprecationWarning: The oldnumeric module will be dropped in Numpy 1.9
+  warnings.warn(_msg, ModuleDeprecationWarning)
+
+[<TestVector: {"We": 1, "can": 1, "see": 1, "sun": 2, "the": 2, "bright": 1, "shining": 1}>]
+<class 'classifier.models.TestVector'>
+[{u'We': 1, u'sun': 2, u'see': 1, u'bright': 1, u'can': 1, u'the': 2, u'shining': 1}]
+[{u'blue': 1, u'The': 1, u'sky': 1, u'is': 1}, {u'sun': 1, u'The': 1, u'is': 1, u'bright': 1}, {u'sun': 1, u'is': 1, u'sky': 1, u'bright': 1, u'in': 1, u'the': 1, u'The': 1}]
+[u'Sky', u'Sun', u'Sun']
+[u'Sun']

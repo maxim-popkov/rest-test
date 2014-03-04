@@ -104,3 +104,11 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'files', 'media')
 MEDIA_URL = '/media/'
+
+# setup logger
+import logging
+
+logging.basicConfig(level=logging.INFO,
+     format='%(message)s',
+     filename=os.path.join(BASE_DIR, 'django.log'),
+     filemode='a+')
