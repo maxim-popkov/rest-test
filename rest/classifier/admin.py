@@ -21,7 +21,10 @@ def get_docs(db_vectors):
 
 
 def classify(modeladmin, request, queryset):
-    queryset.update(isClassified=True)
+    """
+    Classify admin action
+    """
+    # queryset.update(isClassified=True)
     logging.info(str(queryset))
     logging.info(type(queryset[0]))
 
@@ -43,10 +46,13 @@ def classify(modeladmin, request, queryset):
 
     logging.info(predict_labels)
     lbl = predict_labels[0]
-    db_test_vector = raw_test_vectors[0]
-    db_predicted_label = Label.objects.filter(name=lbl)[0]
-    db_test_vector.lbl = db_predicted_label
-    db_test_vector.save()
+    classified_pairs = zip(raw_test_vectors, predict_labels)
+    
+    for db_test_vector, label in classified_pairs:
+        db_predicted_label = Label.objects.filter(name=label)[0]
+        db_test_vector.lbl = db_predicted_label
+        db_test_vector.isClassified = True
+        db_test_vector.save()
 
     # logging.error("this is an error!")
 
@@ -54,10 +60,15 @@ classify.short_description = "Classify selected objects"
 
 
 class TestVectorAdmin(admin.ModelAdmin):
-    list_display = ['isClassified', 'cls', 'lbl', 'data']
+    list_display = ['assigned_id', 'isClassified', 'cls', 'lbl']
+    list_filter = ('isClassified','cls', 'lbl')
     actions = [classify]
 
+class TrainVectorAdmin(admin.ModelAdmin):
+    list_display = ['assigned_id', 'lbl','cls']
+    list_filter = ('cls', 'lbl')
+
 admin.site.register(TestVector, TestVectorAdmin)
-admin.site.register(TrainVector)
+admin.site.register(TrainVector, TrainVectorAdmin)
 admin.site.register(Classifier)
 admin.site.register(Label)

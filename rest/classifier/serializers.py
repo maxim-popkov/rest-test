@@ -18,7 +18,7 @@ class VectorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TrainVector
-        fields = ('id', 'data', 'cls', 'lbl')
+        fields = ('id', 'assigned_id', 'data', 'cls', 'lbl')
         read_only_fields = ('id',)
 
 
@@ -38,5 +38,5 @@ class TestVectorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TestVector
-        fields = ('id', 'data')
+        fields = ('id', 'assigned_id','data')
         read_only_fields = ('id',)
