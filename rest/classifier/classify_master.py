@@ -10,13 +10,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import BernoulliNB, MultinomialNB
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.externals import joblib
 
 from collections import Counter
 
 dict_vectorizer = DictVectorizer()
 tfidf_transformer = TfidfTransformer()
 clf = MultinomialNB(alpha=.01)
-
 
 def weight_train_vectors(vectors):
     """
@@ -45,7 +45,6 @@ def train(train_set, categories):
     """
     clf.fit(train_set, categories)
 
-
 def predict(test_set):
     """
     Predict results
@@ -53,3 +52,15 @@ def predict(test_set):
     """
     pred = clf.predict(test_set)
     return pred
+
+def save_on_disk(filename):
+    """
+    Save Classifier on Disk
+    """
+    joblib.dump(clf, filename, compress=9)
+
+def load_from_disk(filename):
+    """
+    Load Classifier from disk
+    """
+    clf = joblib.load(filename)
