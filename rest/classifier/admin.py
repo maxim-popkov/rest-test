@@ -15,7 +15,7 @@ def get_docs(db_vectors):
     categories = []
     for vector in db_vectors:
         data = vector.data
-        label = vector.lbl.name if vector.lbl else None
+        label = vector.lbl.assigned_id if vector.lbl else None
         doc = json.loads(data)
         docs.append(doc)
         categories.append(label)
@@ -29,8 +29,6 @@ def train_action(modeladmin, request, classifiers_set):
     if not classifiers_set:
         return
 
-    short_name = 'classify_master.clf'
-    file_name = os.path.join(settings.MEDIA_ROOT, short_name)
     for cl in classifiers_set:
         # TrainVector.objects.all()
         raw_train_vectors = cl.trainvector_set.all()
@@ -38,11 +36,14 @@ def train_action(modeladmin, request, classifiers_set):
         train_set = cm.weight_train_vectors(train_docs)
         cm.train(train_set, train_labels)
         cl.is_trained = True
-        cl.save_file_path = short_name 
-        cm.save_on_disk(file_name)
+        cl.save_file_path = settings.MEDIA_ROOT 
+        cm.save_on_disk(settings.MEDIA_ROOT, 'clf_name')
         cl.save()
     logging.info('TRAIN COMPLETE')
 
+class prettyfloat(float):
+    def __repr__(self):
+        return "%0.2f" % self
 
 def classify_action(modeladmin, request, queryset):
     """
@@ -50,21 +51,26 @@ def classify_action(modeladmin, request, queryset):
     """
     if not queryset:
         return
-    # cm.load_from_disk('./classify_master.clf')
+    clf = cm.load_from_disk(settings.MEDIA_ROOT, 'clf_name')
 
     raw_test_vectors = TestVector.objects.all()
     test_docs, tmp = get_docs(raw_test_vectors)
 
     logging.info(test_docs)
-    test_set = cm.weight_test_vectors(test_docs)
-    predict_labels = cm.predict(test_set)
-
+    test_set = cm.weight_test_vectors(clf['dvt'], clf['tft'], test_docs)
+    predict_labels = cm.predict(clf['clf'], test_set)
+    predict_probs = cm.predict_probs(clf['clf'], test_set)
+    pretty_probs = []
+    for probs in predict_probs:
+        pretty_probs.append(map(prettyfloat, probs))
+    logging.info('========================')
     logging.info(predict_labels)
-    lbl = predict_labels[0]
+    logging.info(pretty_probs)
+
     classified_pairs = zip(raw_test_vectors, predict_labels)
 
     for db_test_vector, label in classified_pairs:
-        db_predicted_label = Label.objects.filter(name=label)[0]
+        db_predicted_label = Label.objects.filter(assigned_id=label)[0]
         db_test_vector.lbl = db_predicted_label
         db_test_vector.isClassified = True
         db_test_vector.save()
@@ -92,6 +98,8 @@ class LabelInline(admin.TabularInline):
     model = Label
     extra = 1
 
+class LabelAdmin(admin.ModelAdmin):
+    list_display = ['name', 'assigned_id', 'id']
 
 class TrainVectorAdmin(admin.ModelAdmin):
     list_display = ['assigned_id', 'lbl', 'cls']
@@ -110,4 +118,4 @@ train_action.short_description = 'Train selected objects'
 admin.site.register(TestVector, TestVectorAdmin)
 admin.site.register(TrainVector, TrainVectorAdmin)
 admin.site.register(Classifier, ClassifierAdmin)
-admin.site.register(Label)
+admin.site.register(Label, LabelAdmin)

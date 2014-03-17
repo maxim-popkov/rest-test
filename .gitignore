@@ -3,5 +3,8 @@
 *.pyc
 *.clf
 *.log
+*.clf
+*.dvt
+*.tft
 pip
 venv/

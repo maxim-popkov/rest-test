@@ -13,10 +13,19 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.externals import joblib
 
 from collections import Counter
+import logging
+import os
 
+logging.info("INIT START")
 dict_vectorizer = DictVectorizer()
 tfidf_transformer = TfidfTransformer()
 clf = MultinomialNB(alpha=.01)
+
+classifier_parts = {\
+                    'clf':'classify_master.clf',\
+                    'dvt':'dict_vectorizer.dvt',\
+                    'tft':'tfidf_transformer.tft'\
+                    }
 
 def weight_train_vectors(vectors):
     """
@@ -28,13 +37,16 @@ def weight_train_vectors(vectors):
     return sparse_tf_idf
 
 
-def weight_test_vectors(vectors):
+def weight_test_vectors(dict_vectorizer, tfidf_transformer, vectors):
     """
     Weight test feature vectors
     """
+    logging.info("TEST WEIGHT START")
+    logging.info(dict_vectorizer.vocabulary_)
     sparse_matrix = dict_vectorizer.transform(vectors)
+    logging.info("DICT COMPLETE")
     sparse_tf_idf = tfidf_transformer.transform(sparse_matrix)
-
+    logging.info("TEST WEIGHT END")
     return sparse_tf_idf
 
 
@@ -45,22 +57,46 @@ def train(train_set, categories):
     """
     clf.fit(train_set, categories)
 
-def predict(test_set):
+def predict(clf, test_set):
     """
     Predict results
     in: sparse matrix
     """
+    logging.info("PREDICT")
     pred = clf.predict(test_set)
     return pred
 
-def save_on_disk(filename):
+def predict_probs(clf, test_set):
+    """
+    Predict probabilities results
+    in: sparse matrix
+    """
+    logging.info("PREDICT PROBS")
+    probs = clf.predict_proba(test_set)
+    return probs
+
+def save_on_disk(directory, clf_name = None):
     """
     Save Classifier on Disk
     """
-    joblib.dump(clf, filename, compress=9)
+    clf_filename = os.path.join(directory, classifier_parts['clf'])
+    dvt_filename = os.path.join(directory, classifier_parts['dvt'])
+    tft_filename = os.path.join(directory, classifier_parts['tft'])
 
-def load_from_disk(filename):
+    joblib.dump(clf, clf_filename, compress=9)
+    joblib.dump(dict_vectorizer, dvt_filename, compress=9)
+    joblib.dump(tfidf_transformer, tft_filename, compress=9)
+
+def load_from_disk(directory, clf_name = None):
     """
     Load Classifier from disk
     """
-    clf = joblib.load(filename)
+    logging.info("LOAD CLASSIFIER")
+    clf_filename = os.path.join(directory, classifier_parts['clf'])
+    dvt_filename = os.path.join(directory, classifier_parts['dvt'])
+    tft_filename = os.path.join(directory, classifier_parts['tft'])
+
+    clf = joblib.load(clf_filename)
+    dict_vectorizer = joblib.load(dvt_filename)
+    tfidf_transformer = joblib.load(tft_filename)
+    return {'clf':clf, 'dvt':dict_vectorizer, 'tft':tfidf_transformer}

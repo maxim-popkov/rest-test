@@ -28,7 +28,7 @@ class Label(models.Model):
     """
     DataBase ORM Model for Label
     """
-    
+    assigned_id = models.CharField(max_length=64, blank=True)    
     name = models.CharField(max_length=64)
     cls = models.ForeignKey(Classifier)
 
@@ -45,7 +45,7 @@ class TrainVector(models.Model):
     """
     DataBase ORM Model for Train Vector
     """
-    assigned_id = models.CharField(max_length=64)
+    assigned_id = models.CharField(max_length=64, blank=True)
     cls = models.ForeignKey(Classifier)
     lbl = models.ForeignKey(Label)
     data = models.TextField()
@@ -67,7 +67,7 @@ class TestVector(models.Model):
     
     # param blank=True for admin panel,
     # with param can add vector without specifying foreignkeys
-    assigned_id = models.CharField(max_length=64)
+    assigned_id = models.CharField(max_length=64, blank=True)
     cls = models.ForeignKey(
         Classifier, null=True, blank=True, db_constraint=False)
     lbl = models.ForeignKey(Label, null=True, blank=True, db_constraint=False)
