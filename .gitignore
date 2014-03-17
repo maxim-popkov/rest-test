@@ -6,5 +6,6 @@
 *.clf
 *.dvt
 *.tft
+*.sqlite3
 pip
 venv/
