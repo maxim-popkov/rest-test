@@ -28,7 +28,7 @@ class LabelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Label
-        fields = ('id', 'name', 'assigned_id')
+        fields = ('id', 'name', 'assigned_id', 'cls')
         read_only_fields = ('id',)
 
 

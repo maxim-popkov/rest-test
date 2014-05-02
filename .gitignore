@@ -3,6 +3,7 @@
 *.pyc
 *.clf
 *.log
+*.sql
 *.clf
 *.dvt
 *.tft
