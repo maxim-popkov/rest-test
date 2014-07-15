@@ -76,6 +76,7 @@ class TestVector(models.Model):
     lbl = models.ForeignKey(Label, null=True, blank=True, db_constraint=False)
     data = models.TextField()
     isClassified = models.BooleanField(default=False)
+    accepted = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = u'Классифицируемый вектор'

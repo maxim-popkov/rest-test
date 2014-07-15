@@ -86,7 +86,7 @@ def classify_action(modeladmin, request, classifiers_set):
 
 
 class TestVectorAdmin(admin.ModelAdmin):
-    list_display = ['_assigned_id', '_isClassified', '_cls', '_lbl']
+    list_display = ['_assigned_id', '_isClassified', 'accepted','_cls', '_lbl']
     list_filter = ('isClassified', 'cls', 'lbl')
     
     def _assigned_id(self, obj):
